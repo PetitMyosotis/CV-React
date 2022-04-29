@@ -6,7 +6,7 @@
   font-family: "Dosis", sans-serif;
   height: 100%;
   min-height: $min-height;
-  min-width: 264px;
+  width: 264px;
   border-radius: $borderRadius;
   position: relative;
   display: grid;
@@ -30,7 +30,7 @@
       width: 100%;
 
       img {
-        max-height: 200px;
+        max-height: 180px;
         border-radius: 50%;
         box-shadow: 0 0 0 4px $color-4, 0 0 0 8px $color-3, 0 0 0 12px $color-2;
       }
@@ -58,13 +58,101 @@
 
         i {
           position: absolute;
-          font-size: 0.95rem;
+          font-size: 1.5rem;
           transform: translateY(3px);
           transition: 0.2s ease;
         }
         span {
           margin-left: 2.7rem;
         }
+      }
+    }
+  }
+}
+.socialNetwork {
+  grid-area: 3;
+  ul {
+    display: flex;
+    width: 264px;
+    padding: 0 14px;
+    justify-content: space-evenly;
+
+    li {
+      font-size: 1.5rem;
+      background: $color-2;
+      border-radius: 50%;
+      padding: 0.5rem 0.8rem;
+      transition: 0.3s;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+
+      a:visited {
+        color: $black;
+      }
+      &:hover {
+        background: $color-3;
+      }
+    }
+  }
+  .signature {
+    margin-top: 2rem;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+
+    p {
+      color: $color-5;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .sidebar {
+    display: flex;
+    min-height: 50px;
+    margin-bottom: 0.2rem;
+    width: 100%;
+
+    .socialNetwork {
+      display: none;
+    }
+    .id {
+      display: none;
+    }
+    .navigation {
+      width: 100%;
+      padding: 0.1rem 1rem;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+
+        i {
+          transform: translateX(-5px) !important;
+        }
+
+        span {
+          margin-left: 1.5rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .sidebar {
+    ul {
+      justify-content: space-around !important;
+
+      li {
+        padding: 1rem 0 !important;
+      }
+
+      i {
+        font-size: 1.4rem !important;
+      }
+      span {
+        display: none;
       }
     }
   }
